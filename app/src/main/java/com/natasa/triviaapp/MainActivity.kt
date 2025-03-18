@@ -10,6 +10,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.natasa.triviaapp.component.QuestionDisplay
 import com.natasa.triviaapp.screens.QuestionsViewModel
 import com.natasa.triviaapp.screens.TriviaHome
 import com.natasa.triviaapp.ui.theme.TriviaAppTheme
@@ -45,6 +46,9 @@ fun Questions(viewModel: QuestionsViewModel) {
         Log.d(TAG, "Questions: ${questions?.size}")
         questions?.forEach{
             Log.d(TAG, "Question: ${it.question}")
+        }
+        if (questions!=null){
+            QuestionDisplay(questions.first()) { }
         }
     }
 }
